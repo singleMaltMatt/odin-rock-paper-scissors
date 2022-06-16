@@ -27,9 +27,16 @@ function playRound(playerSelection, computerSelection) {
     } else if (computerSelection === 'Scissors' && playerSelection === 'paper') {
         console.log('The Machine chose ' + computerSelection)
         return console.warn('You Lose! Scissors beats Paper!');
+    } else if (computerSelection === 'Rock' && playerSelection === 'scissors') {
+        console.log('The Machine chose ' + computerSelection)
+        return console.warn('You Lose! Rock beats Scissors!');
+    } else if (computerSelection === 'Paper' && playerSelection === 'scissors') {
+        console.log('The Machine chose ' + computerSelection)
+        return console.warn('You Won! Scissors beats Paper');
+    } else if (computerSelection === 'Scissors' && playerSelection === 'scissors') {
+        console.log('The Machine chose ' + computerSelection)
+        return console.warn('It\'s a draw!');
     }
-
-    
 }
 
 const playerChoice = prompt('Choose a weapon (Rock, Paper or Scissors)', '');
@@ -37,3 +44,7 @@ const playerSelection = playerChoice.toLowerCase();
 console.log(playerSelection);
 const computerSelection = computerPlay();
 console.log(playRound(playerSelection, computerSelection));
+
+function game() {
+    
+}
