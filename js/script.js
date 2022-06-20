@@ -60,21 +60,31 @@ function playRound(playerSelection, computerSelection) {
         tieScore++;
         return console.warn(tie);
     } //else {
-        //alert('You can only select Rock, Paper or Scissors!') THIS WILL ONLY WORK WHEN THE GAME FINALLY LOOPS> OTHERWISE WE ARE STUCK 
+        //alert('You can only select Rock, Paper or Scissors!') THIS WILL ONLY WORK WHEN THE GAME FINALLY LOOPS> OTHERWISE WE ARE STUCK
     //}
 }
 
 // VARIABLES TO START GAME
-const playerChoice = prompt('Choose a weapon (Rock, Paper or Scissors)', '');
-const playerSelection = playerChoice.toLowerCase();
+let playerChoice = prompt('Choose a weapon (Rock, Paper or Scissors)', '');
+let playerSelection = playerChoice.toLowerCase();
 console.log(playerSelection);
-const computerSelection = computerPlay();
+let computerSelection = computerPlay();
 console.log(playRound(playerSelection, computerSelection));
 
 // FUNCTION TO RUN GAME AND LOOP ROUNDS UNTIL WINNER
 function game() { 
     for (let i = 0; i < 5; i++) {
-        playRound();
+        playerChoice = prompt('Choose a weapon (Rock, Paper or Scissors)', '');
+        console.log(playerSelection);
+
+        const computerChoices = [
+            'Rock',
+            'Paper',
+            'Scissors',
+        ];
+
+
     }
 }
 
+game();
