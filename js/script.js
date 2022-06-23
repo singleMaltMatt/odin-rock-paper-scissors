@@ -1,10 +1,3 @@
-// COMPUTERS CHOICE ARRAY
-const computerChoices = [
-    'Rock',
-    'Paper',
-    'Scissors'
-]
-
 // WIN LOSE MESSAGES
 let win = 'You Won! ';
 let lose = 'You Lose! ';
@@ -18,6 +11,11 @@ let tieScore = 0;
 
 // FUNCTION TO DETERMINE CHOICE FROM ARRAY
 function computerPlay() {
+    const computerChoices = [
+        'Rock',
+        'Paper',
+        'Scissors'
+    ];
     return computerChoices[Math.floor(Math.random() * computerChoices.length)]
 }
 
@@ -36,7 +34,7 @@ function playRound(playerSelection, computerSelection) {
         console.log('The Machine chose ' + computerSelection)
         return console.warn(win);
     } else {
-        'You need to select either Rock, Paper or Scissors!'
+        return 'You need to select either Rock, Paper or Scissors!'
     }
 
 }
@@ -48,8 +46,8 @@ console.log(playerSelection);
 let computerSelection = computerPlay();
 console.log(playRound(playerSelection, computerSelection));
 
-//FUNCTION TO RUN GAME AND LOOP ROUNDS UNTIL WINNER
-function game() { 
+FUNCTION TO RUN GAME AND LOOP ROUNDS UNTIL WINNER
+function game() {
     for (let i = 0; i < 5; i++) {
         playerChoice = prompt('Choose a weapon (Rock, Paper or Scissors)', '');
         const computerChoices = [
@@ -64,7 +62,7 @@ function game() {
 
         // even though it loops 5 times now. it doesnt matter what i enter after round 1
         // it still logs as my first rounds choice. and also the computers choice still remains the same
-        // remember the if statement. find out if it should be nested in this one or?
+        // remember the if statement. find out if it should be nested in this one or? > most probably right. as the function needs to loop it.
         // if (computer = win) { computerscore++ }
         // else if (player = win) {playerscore++ }
         // else {tiescore++ }
