@@ -54,11 +54,18 @@ function game() {
     for (let i = 0; i < 5; i++) {
         let playerChoice = prompt('Choose a weapon (Rock, Paper or Scissors)', '');
         let playerSelection = playerChoice.toLowerCase();
-        console.log(playerSelection);
+        console.log('You Chose ' + playerSelection);
         let computerSelection = computerPlay();
         console.log(playRound(playerSelection, computerSelection));
-        console.log('Your Score is ' + playerScore);
-        console.log('Machine Score is ' + computerScore);
+        console.log('SCORES: YOU: ' + playerScore + ' || '
+            + ' MACHINE: ' + computerScore + ' || '
+            + ' DRAWS: ' + tieScore);
+    } if (playerScore > computerScore) {
+        console.log('Congrats, you won this epic battle!')
+    } else if (computerScore > playerScore) {
+        console.log('The world is doomed, the Machine won! Better luck next life...')
+    } else if (tieScore > computerScore && tieScore > playerScore) {
+        console.log('No winner this time... it\'s a draw.')
     }
 }
 
