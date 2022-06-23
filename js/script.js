@@ -9,7 +9,7 @@ let computerScore = 0;
 let tieScore = 0;
 
 
-// FUNCTION TO DETERMINE CHOICE FROM ARRAY
+// FUNCTION TO DETERMINE CHOICE FROM ARRAY FOR COMPUTER
 function computerPlay() {
     const computerChoices = [
         'Rock',
@@ -42,12 +42,6 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
-// VARIABLES TO START GAME
-// let playerChoice = prompt('Choose a weapon (Rock, Paper or Scissors)', '');
-// let playerSelection = playerChoice.toLowerCase();
-// console.log(playerSelection);
-// let computerSelection = computerPlay();
-// console.log(playRound(playerSelection, computerSelection));
 
 //FUNCTION TO RUN GAME AND LOOP ROUNDS UNTIL WINNER
 function game() {
@@ -66,6 +60,8 @@ function game() {
         console.log('The world is doomed, the Machine won! Better luck next life...')
     } else if (tieScore > computerScore && tieScore > playerScore) {
         console.log('No winner this time... it\'s a draw.')
+    } else if (computerScore == playerScore && playerScore == computerScore && computerScore > tieScore && playerScore > tieScore) {
+        console.log('No winner this time... it\'s a draw.')
     }
 }
 
@@ -73,29 +69,9 @@ game();
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // even though it loops 5 times now. it doesnt matter what i enter after round 1
-        // it still logs as my first rounds choice. and also the computers choice still remains the same
-        // remember the if statement. find out if it should be nested in this one or? > most probably right. as the function needs to loop it.
-        // if (computer = win) { computerscore++ }
-        // else if (player = win) {playerscore++ }
-        // else {tiescore++ }
+// VARIABLES TO START GAME (irrelevant now. all of them added to the loop)
+// let playerChoice = prompt('Choose a weapon (Rock, Paper or Scissors)', '');
+// let playerSelection = playerChoice.toLowerCase();
+// console.log(playerSelection);
+// let computerSelection = computerPlay();
+// console.log(playRound(playerSelection, computerSelection));
