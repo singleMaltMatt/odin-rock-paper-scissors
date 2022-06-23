@@ -24,41 +24,67 @@ function playRound(playerSelection, computerSelection) {
     if (computerSelection === 'Rock' && playerSelection === 'rock' || computerSelection === 'Paper' && playerSelection === 'paper' ||
         computerSelection === 'Scissors' && playerSelection === 'scissors') {
         console.log('The Machine chose ' + computerSelection);
+        tieScore++;
         return console.warn(tie);
     } else if (computerSelection === 'Rock' && playerSelection === 'scissors' || computerSelection === 'Paper' && playerSelection === 'rock' ||
         computerSelection === 'Scissors' && playerSelection === 'paper') {
         console.log('The Machine chose ' + computerSelection);
+        computerScore++;
         return console.warn(lose);
     } else if (computerSelection === 'Rock' && playerSelection === 'paper' || computerSelection === 'Paper' && playerSelection === 'scissors' ||
         computerSelection === 'Scissors' && playerSelection === 'rock') {
-        console.log('The Machine chose ' + computerSelection)
+        console.log('The Machine chose ' + computerSelection);
+        playerScore++;
         return console.warn(win);
     } else {
-        return 'You need to select either Rock, Paper or Scissors!'
+        return 'You need to select either Rock, Paper or Scissors! (Refresh page, let\'s try again)'
     }
 
 }
 
 // VARIABLES TO START GAME
-let playerChoice = prompt('Choose a weapon (Rock, Paper or Scissors)', '');
-let playerSelection = playerChoice.toLowerCase();
-console.log(playerSelection);
-let computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+// let playerChoice = prompt('Choose a weapon (Rock, Paper or Scissors)', '');
+// let playerSelection = playerChoice.toLowerCase();
+// console.log(playerSelection);
+// let computerSelection = computerPlay();
+// console.log(playRound(playerSelection, computerSelection));
 
-FUNCTION TO RUN GAME AND LOOP ROUNDS UNTIL WINNER
+//FUNCTION TO RUN GAME AND LOOP ROUNDS UNTIL WINNER
 function game() {
     for (let i = 0; i < 5; i++) {
-        playerChoice = prompt('Choose a weapon (Rock, Paper or Scissors)', '');
-        const computerChoices = [
-            'Rock',
-            'Paper',
-            'Scissors'
-        ];
-        computerPlay = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-
+        let playerChoice = prompt('Choose a weapon (Rock, Paper or Scissors)', '');
+        let playerSelection = playerChoice.toLowerCase();
         console.log(playerSelection);
+        let computerSelection = computerPlay();
         console.log(playRound(playerSelection, computerSelection));
+        console.log('Your Score is ' + playerScore);
+        console.log('Machine Score is ' + computerScore);
+    }
+}
+
+game();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         // even though it loops 5 times now. it doesnt matter what i enter after round 1
         // it still logs as my first rounds choice. and also the computers choice still remains the same
@@ -66,7 +92,3 @@ function game() {
         // if (computer = win) { computerscore++ }
         // else if (player = win) {playerscore++ }
         // else {tiescore++ }
-    }
-}
-
-game();
